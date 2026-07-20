@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warid | Portfolio</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Space Grotesk',sans-serif;
+    background:#F7F3E9;
+    color:#111;
+    line-height:1.6;
+}
+
+:root{
+    --yellow:#FFD93D;
+    --pink:#FF5D8F;
+    --blue:#5BC0FF;
+    --green:#89F336;
+    --orange:#FF8A00;
+    --white:#fff;
+    --black:#000;
+}
+
+section{
+    padding:90px 8%;
+}
+
+h1,h2,h3{
+    font-weight:800;
+}
+
+h2{
+    font-size:42px;
+    margin-bottom:30px;
+    display:inline-block;
+    background:var(--yellow);
+    padding:8px 18px;
+    border:4px solid #000;
+    box-shadow:8px 8px 0 #000;
+}
+
+p{
+    font-size:18px;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    background:var(--white);
+    border-bottom:4px solid #000;
+    z-index:999;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+.menu{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.menu a{
+    font-weight:700;
+    padding:10px 18px;
+    background:var(--blue);
+    border:3px solid #000;
+    box-shadow:4px 4px 0 #000;
+    transition:.15s;
+}
+
+.menu a:hover{
+    transform:translate(4px,4px);
+    box-shadow:0 0 0 #000;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+    min-height:90vh;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1;
+    margin-bottom:18px;
+}
+
+.hero span{
+    background:var(--pink);
+    padding:0 12px;
+}
+
+.hero p{
+    margin-bottom:30px;
+    max-width:650px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 28px;
+    background:var(--green);
+    border:4px solid #000;
+    box-shadow:7px 7px 0 #000;
+    font-weight:800;
+    transition:.15s;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translate(7px,7px);
+    box-shadow:0 0 0 #000;
+}
+
+.avatar{
+    background:var(--orange);
+    border:5px solid #000;
+    box-shadow:12px 12px 0 #000;
+    aspect-ratio:1;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:150px;
+}
+
+.card{
+    background:#fff;
+    border:4px solid #000;
+    box-shadow:8px 8px 0 #000;
+    padding:28px;
+    transition:.15s;
+}
+
+.grid{
+    display:grid;
+    gap:28px;
+}
+
+.about-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.skills{
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+}
+
+.skill{
+    text-align:center;
+    font-weight:800;
+    font-size:22px;
+}
+
+.projects{
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.project h3{
+    margin-bottom:12px;
+}
+
+.project p{
+    margin-bottom:20px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:8px 14px;
+    background:var(--yellow);
+    border:3px solid #000;
+    font-weight:700;
+}
+
+.contact-box{
+    text-align:center;
+}
+
+.contact-links{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.contact-links a{
+    padding:14px 22px;
+    background:var(--pink);
+    border:3px solid #000;
+    box-shadow:5px 5px 0 #000;
+    font-weight:700;
+    transition:.15s;
+}
+
+.contact-links a:hover{
+    transform:translate(5px,5px);
+    box-shadow:none;
+}
+
+footer{
+    padding:35px;
+    text-align:center;
+    font-weight:700;
+    border-top:4px solid #000;
+    background:#fff;
+}
+
+.float{
+    transform:translate(-5px,-5px);
+    box-shadow:13px 13px 0 #000 !important;
+}
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero p{
+margin:auto auto 30px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:54px;
+}
+
+.avatar{
+font-size:100px;
+max-width:300px;
+margin:auto;
+}
+
+.menu{
+justify-content:center;
+}
+
+.nav-container{
+flex-direction:column;
+gap:18px;
+}
+
+}
+
+@media(max-width:500px){
+
+section{
+padding:70px 22px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+h2{
+font-size:34px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-container">
+<div class="logo">WARID.</div>
+
+<div class="menu">
+<a href="#home">Home</a>
+<a href="#about">Tentang</a>
+<a href="#skills">Skill</a>
+<a href="#projects">Proyek</a>
+<a href="#contact">Kontak</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero" id="home">
+
+<div>
+<h1>Halo, Saya <span>Warid</span></h1>
+
+<p>
+Saya adalah seseorang yang senang mempelajari teknologi, desain, dan pengembangan website.
+Website ini merupakan portofolio pribadi bergaya <b>Neo-Brutalism</b> yang sederhana, modern, dan penuh karakter.
+</p>
+
+<a href="#projects" class="btn">
+Lihat Portofolio →
+</a>
+
+</div>
+
+<div class="avatar">
+😎
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>Tentang Saya</h2>
+
+<div class="grid about-grid">
+
+<div class="card">
+<h3 style="margin-bottom:15px;">Siapa Saya?</h3>
+<p>
+Perkenalkan, saya <b>Warid</b>. Saya memiliki minat besar pada dunia web development,
+UI Design, dan teknologi modern. Saya senang membangun tampilan website yang unik,
+responsif, dan mudah digunakan.
+</p>
+</div>
+
+<div class="card">
+<h3 style="margin-bottom:15px;">Tujuan</h3>
+<p>
+Terus belajar, mengembangkan kemampuan, serta menciptakan website dan aplikasi
+yang menarik, cepat, dan memberikan pengalaman pengguna yang menyenangkan.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skill</h2>
+
+<div class="grid skills">
+
+<div class="card skill">
+💻
+<br><br>
+HTML5
+</div>
+
+<div class="card skill">
+🎨
+<br><br>
+CSS3
+</div>
+
+<div class="card skill">
+⚡
+<br><br>
+JavaScript
+</div>
+
+<div class="card skill">
+📱
+<br><br>
+Responsive Design
+</div>
+
+<div class="card skill">
+🖌
+<br><br>
+UI / UX
+</div>
+
+<div class="card skill">
+🚀
+<br><br>
+Frontend Development
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Portofolio</h2>
+
+<div class="grid projects">
+
+<div class="card project">
+<h3>Website Portfolio</h3>
+
+<p>
+Website portofolio pribadi dengan tampilan modern, responsif,
+dan mudah dikembangkan.
+</p>
+
+<span class="badge">HTML • CSS • JS</span>
+</div>
+
+<div class="card project">
+<h3>Landing Page</h3>
+
+<p>
+Landing page produk atau bisnis dengan desain yang menarik
+dan fokus pada pengalaman pengguna.
+</p>
+
+<span class="badge">Responsive</span>
+
+</div>
+
+<div class="card project">
+<h3>Dashboard UI</h3>
+
+<p>
+Antarmuka dashboard sederhana dengan tata letak yang bersih
+dan mudah dipahami.
+</p>
+
+<span class="badge">UI Design</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Kontak</h2>
+
+<div class="card contact-box">
+
+<p>
+Tertarik bekerja sama atau ingin berdiskusi?
+Silakan hubungi saya melalui platform berikut.
+</p>
+
+<div class="contact-links">
+
+<a href="#">Email</a>
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 • Dibuat oleh <b>Warid</b> • Neo-Brutalism Portfolio
+</footer>
+
+<script>
+// Hover animation untuk card
+const cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+card.addEventListener("mouseenter",()=>{
+card.classList.add("float");
+});
+
+card.addEventListener("mouseleave",()=>{
+card.classList.remove("float");
+});
+});
+
+// Efek klik tombol
+document.querySelectorAll(".btn,.contact-links a,.menu a").forEach(btn=>{
+btn.addEventListener("click",function(){
+
+this.style.background="#FFD93D";
+
+setTimeout(()=>{
+this.style.background="";
+},180);
+
+});
+});
+
+// Highlight menu aktif saat scroll
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".menu a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(sec=>{
+
+const top=window.scrollY;
+const offset=sec.offsetTop-120;
+const height=sec.offsetHeight;
+
+if(top>=offset && top<offset+height){
+current=sec.getAttribute("id");
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.style.background="#5BC0FF";
+
+if(link.getAttribute("href")==="#"+current){
+link.style.background="#89F336";
+}
+
+});
+
+});
+</script>
+
+</body>
+</html>
